@@ -1,0 +1,16 @@
+.navbar {
+  background-color: $black;
+  
+  .container {
+    padding: 0;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+    
+    h2 {
+      color: $white;
+      margin-bottom: 0;
+    }
+  }
+}
