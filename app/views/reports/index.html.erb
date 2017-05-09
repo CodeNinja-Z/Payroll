@@ -1,0 +1,27 @@
+<h4 class='upload-form-caption text-center'>Upload Report</h4>
+<%= form_tag upload_reports_path, multipart: true, class: 'report-upload-form text-center' do %>
+  <div class='form-group upload-field'>
+    <%= file_field_tag :file, class: "btn btn-large btn-warning" %>
+  </div>
+  <%= submit_tag 'Upload', class: 'btn btn-primary' %>
+<% end %>
+
+<h4 class="text-center">Pay Stubs Report</h4>
+<table class='table table-striped pay-stubs'>
+  <thead>
+    <tr class="table-success">
+      <th>Employee ID</th>
+      <th>Pay Period</th>
+      <th>Amount Paid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pay_stubs.each do |pay_stub| %>
+      <tr>
+        <td><%= pay_stub.employee_id %></td>
+        <td><%= format_date(pay_stub.pay_period_start_date) %> - <%= format_date(pay_stub.pay_period_end_date) %></td>
+        <td><%= number_to_currency(pay_stub.amount_paid) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
