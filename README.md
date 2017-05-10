@@ -9,10 +9,10 @@ Run the following steps to build it locally and set up the local server
 # Some Things To Be Proud Of
 When working on this coding challenge, I focused more on the back-end performance. 
 1. Database structure design. Though this is a simple application to import and convert uploaded .csv files. I do my best to optimize its performance, starting from the database storage. 
-  * When uploading .csv files, I calculate the amount of salary based on the data read from the file and then save the data into report table and pay stub table separately.
+  * When uploading .csv files, I calculate the amount of salary based on the data read from the file and then save the data into report tables and pay stub tables separately.
   * Report table only stores the report_id to determine if a report with same report_id was uploaded. 
-  * Each pay stub record will be created if the employee_id and pay_period are both not existed, and later if a new record (row in .csv file) has the same employee_id and within the samw pay_period, the amount_paid will be calculated and the existing pay stub record will be updated. So there will be no new record created.
-  * With such implementation, the amount of database records is reduced and the size of database is reduced as well. The speed increases when making querying from controller.
+  * Each pay stub record will be created if the employee_id and pay_period are both not existed, and later if a new record (row in .csv file) has the same employee_id and within the same pay period, the amount_paid will be calculated and the existing pay stub record will be updated. So there will be no new record created.
+  * With such implementation, the amount of database records is reduced and the size of database is reduced as well. The speed increases when making query from controller.
   
 2. All model methods, controller actions, helper methods and features are tested with RSpec and Capybara. The quality of code is ensured.
 
