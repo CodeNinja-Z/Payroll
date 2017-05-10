@@ -21,6 +21,7 @@ The front-end UI is not too fancy but intuitive, concise and easy to use.
 # Models & Controllers
 1. Report model/controller are in charge of importing the .csv files, doing calculations before saving the data into reports table and pay_stubs table.
 2. Pay stub model's attributes are delegated to report model using attr_accessor when createing pay stub records inside the 'upload' method in report model.
+3. When display pay roll on the UI, the records are sorted by employee_id(ascending order) and pay_period_start_date(descending order), so that the latest pay stub always appears on the top.
 
 # Notes
 Comments are added at the necessary places in the code like at critical steps in model method for readability.
